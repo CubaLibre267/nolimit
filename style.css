@@ -1,0 +1,353 @@
+/** 
+Allgemeine Infos:
+- Fuer Textgroessen nehmen wir: rem;
+- Wir haben auf der Seite eine Div-Reihe von oben nach unten (welcomescreen, about us usw)
+  In diesen Divs haben wir sub-divs (childs), dessen aeusseres div wir "parent" nennen.
+- Wir arbeiten mit display flex
+- Container > parent > child > ...
+**/
+
+* {
+  padding: 0;
+  margin: 0;
+  color: aliceblue;
+  font-family: "Roboto", sans-serif;
+  scrollbar-color: #454a4d #202324;
+}
+
+body {
+  background-color: #344955;
+}
+
+#page-all-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+/*********************************************WELCOME SCREEN**********************************************/
+
+#welcomescreen-container {
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+.nav-bar {
+  background-color: #232f34;
+  padding: 8px 0 8px 0; /** top right bottom left **/
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  z-index: 1; /** Z-Achse; je hoeher, desto naeher zu dir **/
+  position: relative;
+  font-size: 1.4em;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-bar .icon {
+  display: none;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.nav-link {
+  border-radius: 0.25em;
+  padding: 0.2em 0.5em;
+  text-decoration: none;
+  margin: 0 1vw 0 1vw;
+
+  display: block;
+}
+
+.nav-link:hover {
+  /**buttons**/
+  background-color: #37efba;
+  color: #232f34;
+  transition: all 300ms;
+  font-size-adjust: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+#welcomescreen-container img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+#welcomescreen-container p {
+  font-weight: 700;
+  font-size: 3.5rem;
+  text-shadow: 2px 5px 3px #555;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mySlides {
+  display: none;
+}
+
+/*********************************************ABOUT US**********************************************/
+
+#aboutus-container {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  width: 100%;
+  padding: 5% 20% 5% 20%; /** top right bottom left **/
+}
+
+#header-parent {
+  font-size: 2em;
+  padding-bottom: 1rem;
+  color: #37efba;
+}
+
+/*********************************************DISPLAY**********************************************/
+
+#display-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #4a6572;
+  padding: 5% 5% 5% 5%; /** top right bottom left **/
+}
+
+#display-parent2 img,
+#display-parent3 img {
+  width: 100%;
+  object-fit: cover;
+}
+
+#display-parent1,
+#display-parent4 {
+  width: 30%;
+  text-align: center;
+}
+
+#display-parent2,
+#display-parent3 {
+  display: flex;
+  width: 70%;
+}
+
+#display-parent1,
+#display-parent4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 5rem 0 5rem;
+  font-size: 1.5rem;
+}
+
+#display-parent1 span,
+#display-parent4 span {
+  font-size: 1.5em;
+  color: #37efba;
+}
+
+.display-child {
+  box-sizing: border-box;
+}
+
+/*********************************************STATS**********************************************/
+
+#stats-container {
+  display: flex;
+  background-color: #b9e4c9;
+  width: 100%;
+  padding: 1rem 0 1rem 0;
+}
+
+#stats-wrapper1,
+#stats-wrapper2 {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.stats-child {
+  height: 20vh;
+  width: 20vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.stats-child img {
+  height: 10vh;
+  width: 10vh;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stats-child p {
+  padding-top: 2rem;
+  color: #344955;
+}
+
+/*********************************************Impressum**********************************************/
+
+#impressum-container {
+  padding: 2% 0 0 0; /** top right bottom left **/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 4vh;
+  font-size: 2rem;
+}
+
+#impressum-icons-parent {
+  text-align: center;
+  width: 100%;
+}
+
+#impressum-discord-teamspeak-parent {
+  width: 100%;
+  text-align: center;
+  padding-top: 0.5%;
+}
+
+.icon-impressum {
+  height: auto;
+  max-width: 20%;
+  padding: 0.5% 1% 0% 1%;
+}
+
+#impressum-links-parent {
+  padding: 0 0 2% 0; /** top right bottom left **/
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.impressum-links {
+  text-decoration: none;
+}
+
+.impressum-links:hover {
+  color: #37efba;
+}
+
+.fa {
+  padding: 10px;
+  font-size: 1.4rem;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+  opacity: 0.8;
+}
+
+.icons:hover {
+  background: #37efba;
+}
+
+.icons {
+  background: aliceblue;
+  color: black;
+}
+
+/*********************************************@MEDIA NAVBAR**********************************************/
+
+@media screen and (max-width: 770px) {
+  .nav-bar a:not(:first-child) {
+    display: none;
+  }
+  .nav-bar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .nav-bar.responsive {
+    position: relative;
+  }
+  .nav-bar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  /*********************************************@MEDIA ABOUT US**********************************************/
+  #aboutus-container {
+    padding: 10% 5% 10% 5%;
+  }
+
+  /*********************************************@MEDIA Display**********************************************/
+  #display-container {
+    flex-flow: column wrap;
+    padding: 0;
+  }
+
+  #display-parent1,
+  #display-parent4 {
+    width: 100%;
+    padding: 10% 0% 10% 0%;
+  }
+
+  #display-parent2,
+  #display-parent3 {
+    display: flex;
+    width: 100%;
+  }
+
+  #display-parent2 img,
+  #display-parent3 img {
+    min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+
+  .display-child {
+    width: 100%;
+  }
+
+  /*********************************************@MEDIA Impressum**********************************************/
+  #impressum-container {
+    padding: 10% 0 10% 0;
+  }
+
+  #impressum-discord-teamspeak-parent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .icon-impressum {
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    max-width: 40vw;
+    padding: 0.5% 1% 0% 1%;
+  }
+}
